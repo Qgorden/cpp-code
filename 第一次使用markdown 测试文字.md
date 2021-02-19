@@ -9,3 +9,4 @@
 https://www.zhihu.com/question/358453199
 //
 这个链接里找到了答案，用了工程makefile 的命令行./main.exe形成了result。txt文件并且成功。
+//********typora能够编写但是picgo上传老显示服务器错误，明天继续研究一下
