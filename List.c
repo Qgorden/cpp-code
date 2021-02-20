@@ -3,12 +3,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-struct SListNode* Create()//Á´±í´´½¨º¯Êý
+struct SListNode* Create()//é“¾è¡¨åˆ›å»ºå‡½æ•°
 {
     H* head = (H*)malloc(sizeof( H));
     return head;
 }
-int DestroyList(H *head)//Ïú»ÙÁ´±íº¯Êý
+int DestroyList(H *head)//é”€æ¯é“¾è¡¨å‡½æ•°
 {
     H *p;
     if(head==NULL)
@@ -21,7 +21,7 @@ int DestroyList(H *head)//Ïú»ÙÁ´±íº¯Êý
     }
     return 1;
 }
-struct SListNode* AddtoListNodeTail(H* head, char* value)//Ìí¼ÓÒ»¸ö½Úµãµ½Á´±íµÄÄ©Î²
+struct SListNode* AddtoListNodeTail(H* head, char* value)//æ·»åŠ ä¸€ä¸ªèŠ‚ç‚¹åˆ°é“¾è¡¨çš„æœ«å°¾
 {
     H* newNode =( H*)malloc(sizeof( H));
     strcpy(newNode->_data.name,value);
@@ -41,19 +41,19 @@ struct SListNode* AddtoListNodeTail(H* head, char* value)//Ìí¼ÓÒ»¸ö½Úµãµ½Á´±íµÄÄ
     return head;
 }
 
-struct SListNode* RemoveFirstValue(H *head, char *value)//ÕÒµ½µÚÒ»¸öº¬ÓÐÄ³¸öÖµµÄ½Úµã²¢É¾³ý¸Ã½Úµã
+struct SListNode* RemoveFirstValue(H *head, char *value)//æ‰¾åˆ°ç¬¬ä¸€ä¸ªå«æœ‰æŸä¸ªå€¼çš„èŠ‚ç”µå¹¶åˆ é™¤è¯¥èŠ‚ç‚¹
 {
     if (head == NULL)
         return head;
     H* RemoveNode = NULL;
 
-    //ÒªÉ¾³ýµÄÊÇÍ·½Úµã
+    //è¦æ˜¯åˆ é™¤çš„æ˜¯å¤´èŠ‚ç‚¹
     if (!strcmp((head->_data).name,value))
     {
         RemoveNode = head;
         head = head->next;
     }
-    //ÒªÉ¾³ýµÄ²»ÊÇÍ·½Úµã
+    //è¦åˆ é™¤çš„ä¸æ˜¯å¤´èŠ‚ç‚¹
     else
     {
         H *node = head;
@@ -73,7 +73,7 @@ struct SListNode* RemoveFirstValue(H *head, char *value)//ÕÒµ½µÚÒ»¸öº¬ÓÐÄ³¸öÖµµÄ
     }
     return head;
 }
-struct SListNode*  ADD( H* head,char *value)//ÕÒµ½ÏàÓ¦µÄ½Úµã£¬¼ÆÊý¼Ó1
+struct SListNode*  ADD( H* head,char *value)//æ‰¾åˆ°ç›¸åº”çš„èŠ‚ç”µï¼Œè®¡æ•°åŠ ä¸€
 {
     H *node = head;
     while (node != NULL && strcmp(node->_data.name,value))
