@@ -3,12 +3,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-struct SListNode* Create()
+struct SListNode* Create()//链表创建函数
 {
     H* head = (H*)malloc(sizeof( H));
     return head;
 }
-int DestroyList(H *head)
+int DestroyList(H *head)//销毁链表函数
 {
     H *p;
     if(head==NULL)
@@ -21,8 +21,7 @@ int DestroyList(H *head)
     }
     return 1;
 }
-
-struct SListNode* AddtoListNodeTail(H* head, char* value)
+struct SListNode* AddtoListNodeTail(H* head, char* value)//添加一个节点到链表的末尾
 {
     H* newNode =( H*)malloc(sizeof( H));
     strcpy(newNode->_data.name,value);
@@ -42,19 +41,19 @@ struct SListNode* AddtoListNodeTail(H* head, char* value)
     return head;
 }
 
-struct SListNode* RemoveFirstValue(H *head, char *value)
+struct SListNode* RemoveFirstValue(H *head, char *value)//找到第一个含有某个值的节点并删除该节点
 {
     if (head == NULL)
         return head;
     H* RemoveNode = NULL;
 
-    //要删锟斤拷锟斤拷锟斤拷头锟节碉拷
+    //要删除的是头节点
     if (!strcmp((head->_data).name,value))
     {
         RemoveNode = head;
         head = head->next;
     }
-    //要删锟斤拷锟侥诧拷锟斤拷头锟节碉拷
+    //要删除的不是头节点
     else
     {
         H *node = head;
@@ -71,12 +70,10 @@ struct SListNode* RemoveFirstValue(H *head, char *value)
     if (RemoveNode != NULL)
     {
         free(RemoveNode);
-//        return 1;
-//        RemoveNode = NULL;
     }
     return head;
 }
-struct SListNode*  ADD( H* head,char *value)
+struct SListNode*  ADD( H* head,char *value)//找到相应的节点，计数加1
 {
     H *node = head;
     while (node != NULL && strcmp(node->_data.name,value))
