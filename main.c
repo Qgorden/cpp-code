@@ -8,6 +8,6 @@
 int main()
 {
     H *head=read();
-    write(head);
+    write("result.txt",head);
     return 0;
 }
