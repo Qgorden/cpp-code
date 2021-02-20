@@ -73,7 +73,7 @@ struct SListNode* RemoveFirstValue(H *head, char *value)//找到第一个含有�
     }
     return head;
 }
-struct SListNode*  ADD( H* head,char *value)//找到相应的节电，计数加一
+struct SListNode*  ADD( H* head,char *value)//找到相应的节点，计数加一
 {
     H *node = head;
     while (node != NULL && strcmp(node->_data.name,value))

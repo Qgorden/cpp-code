@@ -4,9 +4,9 @@
 #include"head.h"
 #include"List.h"
 #include"fileread.h"
-void write(H *head)
+void write(char *S,H *head)//把链表中的数据写入文件
 {
-    FILE *P=fopen("result.txt","w");
+    FILE *P=fopen(S,"w");
     H* phead=head;
     while(phead!=NULL)
     {

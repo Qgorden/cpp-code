@@ -4,19 +4,18 @@
 #include"head.h"
 #include"List.h"
 #define maxn 1010
-char Cun[100][maxn];
-struct SListNode* read()
+char Cun[10000][maxn];//储存都出现过的名字
+struct SListNode* read()//读取文件内容
 {
-    FILE *P=fopen("user_login.txt","r");
+    FILE *P=fopen("user_login.txt","r");//打开文件
     char S[maxn],_S[maxn];
-    H* head=Create();
+    H* head=Create();//创建链表
     head=NULL;
     int L=0;
-    for(int i=0; i<30; i++)
+    for(; fscanf(P,"%s",S)==1;)//这里只读取前30个数据
     {
-        fscanf(P,"%s",S);
         int s=strlen(S);
-        for(int j=0; j<s; j++)
+        for(int j=0; j<s; j++)//每次只截取逗号前面的自负作为名字
         {
             if(S[j]==',')
             {
@@ -25,8 +24,9 @@ struct SListNode* read()
             }
             _S[j]=S[j];
         }
+//        printf("%s\n",_S);
         int f=0;
-        for(int j=0; j<L; j++)
+        for(int j=0; j<L; j++)//判断该名字是否出现过
         {
             if(!strcmp(_S,Cun[j]))
             {
@@ -34,19 +34,16 @@ struct SListNode* read()
                 break;
             }
         }
-        printf("%s\n",_S);
-        printf("%d\n",f);
-        if(!f)
+
+        if(!f)//没有出现过直接插入链表
         {
             strcpy(Cun[L],_S);
             L++;
             head=AddtoListNodeTail(head,_S);
         }
-        else
+        else//出现过则在链表中查找，把数目加一
         {
-            printf("*%s\n",_S);
             head=ADD(head,_S);
-            printf("**%s\n",_S);
 
         }
     }
