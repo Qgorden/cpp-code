@@ -13,3 +13,4 @@ https://www.zhihu.com/question/358453199
 gcc main.c fileread.c filewirte.c List.c -o main.exe这个生成了main。exe
 //********typora能够编写但是picgo上传老显示服务器错误，明天继续研究一下
 (4)list的创建，销毁，删除添加节点，遍历和之前上课学的没什么区别，节点合并要麻烦一点
+（5）冒泡排序，具体原理很熟悉，调试了4，5次就成功了。指针的运行比较复杂麻烦，细节要处理的很好才行，很细致，整体没有陌生的问题
