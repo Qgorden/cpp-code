@@ -30,4 +30,39 @@ void adjust(SDataType a[], int idx,int size)
     }
 }
 
+void heapSort(SDataType a[],int size)
+{
+    int idx = size / 2 - 1; 
+    for (int i = idx; i >= 0; i--)    
+    {
+        adjust(a,i,size);  
+    }
 
+    int swapidx = size-1;  
+    for (int i = 0; i < size - 1; i++)
+    {
+        SDataType F=a[0];
+        a[0]= a[swapidx];
+        a[swapidx--]=F;
+        adjust(a, 0, swapidx+1 ); 
+    }
+
+}
+struct SListNode* Heapsort(H * L)
+{
+    H*_L=L;
+    int n=0;
+    while(_L!=NULL)
+    {
+        A[n++]=_L->_data;
+        _L=_L->next;
+    }
+    heapSort(A,n);
+    _L=L;
+    for(int i=0; i<n; i++)
+    {
+        _L->_data=A[i];
+        _L=_L->next;
+    }
+    return L;
+}
