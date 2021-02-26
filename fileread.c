@@ -15,7 +15,7 @@ struct SListNode* read()//读取文件内容
     for(; fscanf(P,"%s",S)==1;)//这里只读取前30个数据
     {
         int s=strlen(S);
-        for(int j=0; j<s; j++)//每次只截取逗号前面的自负作为名字
+        for(int j=0; j<s; j++)//每次只截取逗号前面的字符作为名字
         {
             if(S[j]==',')
             {
