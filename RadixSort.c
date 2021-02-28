@@ -6,7 +6,7 @@
 #include"List.h"
 #include"fileread.h"
 SDataType A[10010];
-int maxd(SDataType v[],int n)
+int maxd(SDataType v[],int n)//计算需要排序的轮数
 {
     int d=1;
     int m=1;
@@ -27,6 +27,7 @@ void radix_sort(SDataType v[],int n)
     int p=1;
     SDataType mv[12][2000];
     for(int i=0; i<=9; i++)
+    //第0个位置记录每个桶内的元素个数
         mv[i][0].totalcount=1;
     while (d--)
     {
